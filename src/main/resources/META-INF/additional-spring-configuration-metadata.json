@@ -1,0 +1,31 @@
+{
+	"groups": [
+		{
+			"name": "similarproducts",
+			"type": "java.lang.String",
+			"description": "SimilarProducts server properties"
+		},
+		{
+			"name": "mocks",
+			"type": "java.lang.String",
+			"description": "Mock server properties"
+		}
+	],
+	"properties": [
+		{
+			"name": "similarproducts.product.cache.refresh",
+			"type": "java.lang.Integer",
+			"description": "Timeout for product cache"
+		},
+		{
+			"name": "mocks.endpoint",
+			"type": "java.lang.String",
+			"description": "Mock server endpoint"
+		},
+		{
+			"name": "mocks.request.timeout",
+			"type": "java.lang.Integer",
+			"description": "Timeout for Mock server response"
+		}
+	]
+}
