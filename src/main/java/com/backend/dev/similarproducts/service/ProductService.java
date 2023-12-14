@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.backend.dev.similarproducts.client.MockClient;
+import com.backend.dev.similarproducts.client.MockServerClient;
 import com.backend.dev.similarproducts.exception.ProductNotFoundException;
 import com.backend.dev.similarproducts.model.Product;
 
@@ -18,11 +18,11 @@ public class ProductService {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ProductService.class);
 
-	private MockClient mockClient;
+	private MockServerClient mockServerClient;
 
-	public ProductService(MockClient mockClient) {
+	public ProductService(MockServerClient mockServerClient) {
 		super();
-		this.mockClient = mockClient;
+		this.mockServerClient = mockServerClient;
 	}
 
 	/**
@@ -34,7 +34,7 @@ public class ProductService {
 	 */
 	public Flux<Product> getSimilarProducts(String productId) throws ProductNotFoundException {
 		LOGGER.info("Obtaining similar products for product with id {}.", productId);
-		return mockClient.getSimilarIds(productId).flatMap(mockClient::getProductDetail);
+		return mockServerClient.getSimilarIds(productId).flatMap(mockServerClient::getProductDetail);
 	}
 
 }
