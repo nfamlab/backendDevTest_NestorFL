@@ -1,7 +1,5 @@
 package com.backend.dev.similarproducts.service;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
 import java.math.BigDecimal;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -14,9 +12,7 @@ import org.mockito.quality.Strictness;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.backend.dev.similarproducts.client.MockServerClient;
-import com.backend.dev.similarproducts.exception.ProductNotFoundException;
 import com.backend.dev.similarproducts.model.Product;
-import com.fasterxml.jackson.core.JsonProcessingException;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
